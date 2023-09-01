@@ -1,0 +1,245 @@
+.header {
+    background-color: $bg_black;
+    position: fixed;
+    top: 0;left: 0;
+    width: 100%;
+    z-index: 50;
+    height: 84px;
+    //создаем фон, который будет при открытии меню бургера
+    &:before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: $bg_black;
+       
+    }
+
+    &__container{
+        display: flex;
+        flex-direction: row;
+        //для фона при открытии меню бургера
+        position: relative;
+        //для фона при открытии меню бургера
+        justify-content: space-between;
+        @media (max-width:1170px) {
+           // justify-content: space-around;
+        }
+        align-items: center;
+        min-height: 100%;
+    }
+    &__logo {
+        flex: 0 1 60%;
+        @media (max-width:1170px) {
+            flex: 0 0 10%;
+        }
+
+       
+    }
+    &__navline {
+        flex: 0 0 auto;
+ 
+    }
+
+    &__menu {
+        display: flex;
+        align-items: center;
+
+    }
+
+
+
+
+}
+
+
+.menu {
+
+    &__burger {
+       display: none;
+    }
+
+    &__body {
+        display: flex;
+        align-items: center;
+    }
+
+    &__list {
+        display: flex;
+        & li{
+            margin-right: 37px;
+            &:last-child{
+                margin-right: 0;
+            }
+        }     
+    }
+
+    &__link {
+        display: block;
+        font-family: MacPawFixel;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1.56;
+        color: $fc_grey;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+
+    &__socialnet {
+        display: flex;
+        flex-wrap: nowrap;
+        & img{
+            display: block;
+        }
+        & img:first-child{
+            margin-right: 29px;
+            @media (max-width:1300px) {
+                margin-right: 15px;
+            }
+            @media (max-width:1100px) {
+                margin-right: 10px;
+            }
+        }
+    }
+
+    &__button {
+        background-color: $bg_green;
+        padding: 8px 29px;
+        margin: 0 40px;
+        border-radius: 100px;
+        &:active{
+            background-color: $bg_black;
+        }
+        & button{
+            color: $fc_light_white;
+            font-family: MacPawFixel;
+            font-size: 18px;
+            font-weight: 500;
+            
+            &:active{
+                color: $bg_black;
+            }
+           
+        }
+    }
+}
+
+@media (max-width: 767px){
+
+    .header {
+        height: 54px;
+    }
+
+
+
+    .menu__burger {
+        z-index: 5;
+        display: block;
+        position: absolute;
+        right: 15px;
+        width: 30px;
+        height: 20px;
+        
+        & span{
+            position: absolute;
+            background-color: $bg_white;
+            height: 2px;
+            width: 100%;
+            top: 9px;
+            left: 0;
+        }
+        &::before,
+        &::after{
+            content: '';
+            background-color: $bg_white;
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            left: 0;
+            transition: all 0.3s ease 0s;
+        }
+        &::before{
+            top: 0;
+        }
+        &::after{
+            bottom: 0;
+        }
+    }
+
+    .header:before{
+        z-index: 3;
+    }
+    
+    .header__logo {
+        z-index: 3;
+    }
+
+    .menu__body{
+        position: fixed;
+        background-color: #457067;
+        left: 0;
+        top: -100%;
+        height: 100%;
+        width: 100%;
+        flex-direction: column;
+        padding-top: 150px;
+        transition: all 0.5s ease 0s;
+
+    }
+    .menu__body.active{
+        top: 0;
+    }
+    .menu__burger.active::before{
+        transform: rotate(45deg);
+        top: 9px;
+    }
+    .menu__burger.active::after{
+        transform: rotate(-45deg);
+        bottom: 9px;
+    }
+    .menu__burger.active span{
+        transform: scale(0);
+    }
+
+
+    .menu__list{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        & li{
+            margin: 0;
+            margin-bottom: 50px;
+            & a{
+                font-size: 40px;
+                color:$fc_wjite;
+            }
+            
+        }
+        }
+    .menu__button {
+        margin-bottom: 50px; 
+        & button{
+            font-size: 40px;
+            color:$fc_wjite;
+        }
+        
+    }
+    .menu__socialnet {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        & img{
+            width: 60px;
+            margin-bottom: 30px;
+        }
+        
+    }
+
+
+}

@@ -1,0 +1,180 @@
+.featured {
+    background-color: $bg_black;
+    padding: 0 0 131px 0;
+    border-width: 100vw;
+    border-radius: 0 0 50px 50px;
+    &__container {
+        margin: 0 auto;
+    }
+
+    &__title {
+        font-size: 26px;
+        font-weight: 700;
+        line-height: 1.5;
+        color: $fc_wjite;
+        text-align: center;
+        margin: 0 0 75px 0;
+    }
+
+
+		&__row {
+            display: flex;
+            justify-content: space-between;        
+            padding: 0 15px;
+            margin: 0 -30px;
+        }
+
+		&__column {
+            flex: 0 1 33.333%;
+            margin: 0 15px;
+            min-height: 316px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            
+            border: solid 1px #565656;
+            border-radius: 30px;
+           
+        }
+
+		&__column-info {
+            padding: 43px 42px 51px 37.5px;
+
+        }
+
+		&__column-title {
+            font-size: 26px;
+            font-weight: 700;
+            line-height: 1.5;
+            color: $fc_wjite;
+            margin-bottom: 17px;
+        }
+
+		&__column-text {
+            font-size: 22px;
+            font-weight: 200;
+            line-height: 1.5;
+            color: $fc_wjite;
+        }
+
+		&__column-link {
+            padding: 19px 37.5px;
+            position: relative;
+            & a{
+                display: block;
+                font-size: 20px;
+                font-weight: 500;
+                line-height: 2.05;
+                width: 100%;
+                height: 100%;
+                color: $fc_wjite; 
+                position: relative;
+
+                &::after{
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    display: inline-block;
+                    vertical-align: middle; 
+                    margin-top: 9px;
+                    width: 20px;
+                    height: 20px;
+                    border-top: 1px solid $fc_wjite;
+                    border-right: 1px solid $fc_wjite;
+                    transform: rotate(45deg);
+                    
+                }
+
+            }
+            &::after{
+                content: '';
+                position: absolute;
+                top: 0;left: 0;
+                width: 100%;
+                height: 1px;
+                background-color: #565656;
+            }
+        }
+}
+
+
+@media (max-width: 1100px){
+    .featured__row {
+        flex-direction: column;
+        margin: -40px 0;
+    }
+    .featured__column {
+        flex-direction: column;
+        margin: 20px 0;
+    }
+}
+
+
+
+.featured2 {
+    background-color: $bg_black;
+    padding: 0 0 131px 0;
+    border-width: 100vw;
+    border-radius: 0 0 50px 50px;
+    &__container {
+        margin: 0 auto;
+    }
+
+    &__title {
+        font-size: 26px;
+        font-weight: 700;
+        line-height: 1.5;
+        color: $fc_wjite;
+        text-align: center;
+        margin: 0 0 75px 0;
+    }
+
+
+		&__row {
+            display: grid;
+            grid-template: auto / repeat(3,1fr);
+            grid-gap: 30px;
+            height: 316px;
+           
+        }
+
+		&__column {
+            border: solid 1px #565656;
+            border-radius: 28px; 
+            display: grid;
+            grid-auto-flow: row;
+            grid-template: auto minmax(auto,80px) / 1fr;
+           
+        }
+
+		&__column-info {
+            padding: 43px 42px 0 37px;
+        }
+
+		&__column-title {
+            font-size: 26px;
+            font-weight: 700;
+            line-height: 1.5;
+            color: $fc_wjite;
+           
+        }
+
+		&__column-text {
+            font-size: 22px;
+            font-weight: 200;
+            line-height: 1.5;
+            color: $fc_wjite;  
+        }
+
+		&__column-link {
+            border-top: solid 1px #565656;
+                padding: 19px 38.5px;
+                & a{
+                font-size: 20px;
+                font-weight: 500;
+                line-height: 2.05;
+                color: $fc_wjite;  
+            }
+        }
+}
