@@ -35,15 +35,15 @@
         
 
 //подключение файлов с переменными и шаблонами
-@import "nullstyle.scss";
-@import "variables.scss";
-@import "snippets.scss";
-@import "templates.scss";
-@import "how-do-i-get.scss";
+@import "./nullstyle.scss";
+@import "./variables.scss";
+@import "./snippets.scss";
+@import "./templates.scss";
+@import "./how-do-i-get.scss";
 @import "./resent-transaction.scss";
 @import "./footer.scss";
 
-//стиль всей страницу
+//стиль всей страницуgit
 .wrapper {
     overflow: hidden;
     min-height: 100%;
